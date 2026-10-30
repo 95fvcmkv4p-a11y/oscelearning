@@ -1,0 +1,121 @@
+OSCE.fach({
+  id: "neuro", name: "Neurologie", gruppe: "Kopf & Sinne", ordnung: 12, farbe: "#0f766e", gewicht: 3,
+  quelle: "Evas Ausarbeitung (Neurostatus, Neuro-Altfragen, Extra Wissen); Praktische Aufgaben Neurologie; Altfragen 2020–2025",
+  kern: "Neuro-Stationen verlangen fast nie den kompletten Status, sondern einen **gezielten Ausschnitt**: Reflexe + Kraft + Sensibilität, Hirnnerven grob, Gang/Koordination. Die Kunst ist, schnell zu zeigen und laut zu interpretieren: **zentral oder peripher? welches Segment?**",
+  map: [
+    { t: "Bewusstsein & Sprache", c: ["wach → somnolent → soporös → Koma", "Orientierung, GCS", "Aphasie vs. Dysarthrie"] },
+    { t: "Hirnnerven", c: ["II Pupillen/GF, III/IV/VI Augen", "V Sensibilität, VII Mimik", "IX/X Gaumen, XI, XII Zunge"] },
+    { t: "Motorik", c: ["Trophik, Vorhalteversuch, Kraftgrade 0–5", "Tonus: Spastik vs. Rigor", "MER + Pyramidenbahnzeichen"] },
+    { t: "Sensibilität & Koordination", c: ["Berührung, spitz/stumpf, Vibration, Lagesinn", "Finger-Nase, Knie-Hacke, Diadochokinese", "Romberg, Unterberger, Gang"] },
+    { t: "Zentral vs. peripher", c: ["1. MN: spastisch, Reflexe ↑, Babinski +", "2. MN: schlaff, Reflexe ↓, Atrophie", "Fazialis: Stirn ausgespart = zentral"] },
+    { t: "Fälle", c: ["GBS, Polyneuropathie", "SAB, Schlaganfall, Schwindel", "Parkinson, Fazialisparese"] },
+  ],
+  merke: [
+    "Prüfer:innen unterbrechen oft mit „passt, weiter“. Kurz zeigen reicht: BSR, PSR, ASR; HN grob (Riechen? Finger folgen, Grimassieren).",
+    "Jeden Befund sofort einordnen: Reflex abgeschwächt → peripher (2. MN); gesteigert + Babinski → zentral (1. MN).",
+    "Liegen Hammer, Stimmgabel, Frenzel-Brille bereit: Sie sind ein Hinweis, was erwartet wird.",
+  ],
+  fallen: [
+    "Bei GBS den Liquorbefund (zytoalbuminäre Dissoziation) oder die autonome Beteiligung vergessen",
+    "Hyperakusis bei Fazialisparese (M. stapedius) nicht gewusst",
+    "Bei PNP die obere Extremität untersucht, obwohl nur die untere verlangt war",
+  ],
+  stationen: [
+    {
+      id: "gbs", titel: "Aufsteigende Schwäche: Guillain-Barré-Syndrom", typ: "Fallstation", freq: 3,
+      af: ["2021: GBS: grobe Untersuchung Sensibilität und Motorik, klassische Symptome, Komplikationen, Diagnostik", "2024: Junger Patient mit progressiver Beinschwäche: grob Reflexe, Motorik, Sensibilität, Hirnnerven; VD + Diagnostik; Symptome GBS", "2024: Junger Mann mit Gangunsicherheit und Beinschwäche seit 2 d: Gang/Stand, Sensibilität, zentral vs. peripher (Atrophie, Spastik!), Anamnese **autonome Funktionsstörung**", "2025: Aufsteigende Schwäche seit Tagen in den Beinen, seit gestern Hände: Reflexe, Sensibilität, Motorik, HN grob; VD + DD; GBS-Symptome; Diagnostik (Antikörper, EMG/ENG, **Liquor: Protein hoch**, MRT)", "2025: GBS: Sensi, Kraft und MER OE und UE, Diagnostik (Liquor, ENG, EMG, NLG), HN (v. a. Facialis und Okulomotorik), Therapie"],
+      ablauf: ["Inspektion: Atrophie, Faszikulationen; Gang, Stand (Romberg), Zehen-/Fersengang", "Kraft proximal und distal an OE und UE (Kraftgrade)", "MER: BSR, TSR, PSR, ASR → abgeschwächt bis erloschen; Babinski negativ", "Sensibilität: Berührung, Vibration (Stimmgabel), Lagesinn", "Hirnnerven grob: v. a. **N. facialis** (beidseitige Parese) und Okulomotorik, Schlucken", "Atmung (Vitalkapazität!), Puls, RR"],
+      gerust: {
+        anamnese: ["Beginn, aufsteigender Verlauf (Beine → Arme), Parästhesien, Rückenschmerzen", "**Infekt 1–4 Wochen vorher** (Campylobacter jejuni, CMV, EBV, Influenza, Impfung)", "Autonom: Herzrasen/-stolpern, Blutdruckschwankungen, Schwitzen, Blasen-/Darmstörung", "Atemnot, Schluck- und Sprechstörung, Doppelbilder"],
+        dd: [["Guillain-Barré-Syndrom", "aufsteigend, schlaff, Areflexie, nach Infekt", "Liquor, ENG/EMG"], ["Myelitis transversa / spinale Kompression", "Sensibilitätsniveau, Blase früh, später Spastik", "MRT Wirbelsäule"], ["Myasthenia gravis", "belastungsabhängig, Ptose, Reflexe normal", "AChR-AK, Simpson-Test"], ["Hypokaliämie / Elektrolyte", "", "Labor"], ["Botulismus, Zeckenlähmung, Porphyrie", "", "Anamnese, Labor"], ["Polyneuropathie (chronisch, CIDP)", "langsamer > 8 Wochen", "ENG"]],
+        diagnostik: ["**Liquor: zytoalbuminäre Dissoziation** (Eiweiß ↑, Zellzahl normal), oft erst nach 1 Woche", "Elektroneurographie/EMG: verlangsamte NLG, Leitungsblöcke (demyelinisierend)", "Labor: Elektrolyte, CK, Antikörper (Anti-Gangliosid, z. B. GQ1b bei Miller-Fisher), Infektserologie", "Monitoring: Vitalkapazität, EKG, RR (autonome Dysregulation)", "MRT zum Ausschluss spinaler Ursachen"],
+        therapie: ["Stationär, Monitoring (Intensivstation bei Ateminsuffizienz)", "**Immunglobuline i.v.** oder **Plasmapherese**", "Thromboseprophylaxe, Physiotherapie; keine Kortikosteroide"],
+      },
+      extra: [{ t: "Pathophysiologie in einem Satz", c: ["Autoimmune, meist postinfektiöse Entmarkung peripherer Nerven und Nervenwurzeln (Kreuzreaktion gegen Myelinscheiden)", "Komplikationen: Ateminsuffizienz, Herzrhythmusstörungen, Thrombose/Lungenembolie, Pneumonie"] }],
+      tipps: ["Bei Reflexen haben BSR, PSR, ASR gereicht", "Sagen, dass eine Infektion vorausgeht und es autoimmun gegen Myelinscheiden geht"],
+    },
+    {
+      id: "status", titel: "Neurostatus kompakt: Reflexe, Kraft, zentral vs. peripher", typ: "Untersuchung", freq: 3,
+      af: ["2020: S1-Syndrom; Tonus obere Extremität testen; 3 Muskeleigenreflexe; Unterscheidung zentrale und periphere Parese", "2021: Schwindel: lange Bahnen (alle Tests Sensibilität und Motorik inkl. MER und pathologische Reflexe)", "2024: Wie prüft man zwischen peripheren und zentralen Reflexen? Inspektion auf Atrophie und Prüfung auf Spastik"],
+      ablauf: [
+        "Inspektion: Trophik, Faszikulationen, Fehlstellung (Krallen-, Schwur-, Fallhand)",
+        "Vorhalteversuche Arme (Handflächen nach oben, Augen zu) und Beine: Absinken/Pronation → zentrale Parese",
+        "Tonus: passiv, unregelmäßig in Ellbogen, Hand, Knie: Spastik (geschwindigkeitsabhängig, Taschenmesser) vs. Rigor (Zahnrad, wächsern)",
+        "Kraft seitenvergleichend (0–5)",
+        "MER im Seitenvergleich: BSR (C5/6), RPR (C5/6), TSR (C7/8), Trömner, PSR (L3/4), ASR (S1)",
+        "Pyramidenbahnzeichen: Babinski, Gordon, Oppenheim",
+        "Sensibilität, Koordination (Finger-Nase, Knie-Hacke, Diadochokinese), Romberg, Gang",
+      ],
+      befund: ["{n|Trophik unauffällig, keine Faszikulationen. Vorhalteversuche ohne Absinken oder Pronation. Tonus normal. Kraft an allen Extremitäten 5/5. Muskeleigenreflexe seitengleich mittellebhaft auslösbar, keine Pyramidenbahnzeichen. Sensibilität für alle Qualitäten intakt. Finger-Nase- und Knie-Hacke-Versuch zielsicher, Diadochokinese regelrecht, Romberg und Unterberger unauffällig, Gangbild sicher.}"],
+      gerust: {
+        ddHead: ["", "Zentral (1. Motoneuron)", "Peripher (2. Motoneuron)"],
+        dd: [["Tonus", "spastisch", "schlaff"], ["Reflexe", "gesteigert, verbreiterte Zone, Kloni", "abgeschwächt/erloschen"], ["Pyramidenbahnzeichen", "positiv (Babinski)", "negativ"], ["Atrophie", "gering, spät (Inaktivität)", "früh, ausgeprägt; Faszikulationen"], ["Verteilung", "Hemiparese, Muster", "Segment/Nerv"]],
+      },
+      extra: [{ t: "Reflexe & Segmente {anki}", head: ["Reflex", "Segment · Nerv"], rows: [["BSR (Bizeps)", "C5–6 · N. musculocutaneus"], ["RPR (Radiusperiost)", "C5–6 · N. radialis"], ["TSR (Trizeps)", "C7–8 · N. radialis"], ["ADR (Adduktoren)", "L2–3 · N. obturatorius"], ["PSR (Patellarsehne)", "L3–4 · N. femoralis"], ["TPR (Tibialis posterior)", "L5"], ["ASR (Achillessehne)", "S1–2 · N. tibialis"]] }, { t: "S1-Syndrom", c: ["Schmerz/Sensibilitätsstörung Fußaußenrand, Kleinzehe, Ferse", "Zehengang schwach (Wadenmuskulatur), ASR abgeschwächt"] }],
+    },
+    {
+      id: "sab", titel: "Vernichtungskopfschmerz: SAB", typ: "Fallstation", freq: 2,
+      af: ["2021: Immer wieder Verspannungen, heute Kopfschmerzen wie noch nie: Symptome einer SAB, zielgerichtete Untersuchung (Pupillen, Bewusstsein, Meningismus, Kraft, Motorik), Hirnnervenprüfung", "2023: Leitsymptome SAB, Vigilanz, Meningismus, Hirnnervenstatus, Kraft; Schauspieler spielt **zentrale Fazialisparese** vor"],
+      gerust: {
+        anamnese: ["Plötzlicher **Vernichtungskopfschmerz** („wie noch nie“), Beginn bei Anstrengung/Pressen", "Übelkeit, Erbrechen, Nackensteife, Lichtscheu, Bewusstseinsstörung, Krampfanfall", "Warnkopfschmerz in den Tagen davor, Hypertonie, Rauchen, Familienanamnese (Aneurysmen), Antikoagulation"],
+        diagnostik: ["Vigilanz/GCS, Orientierung", "Pupillen (Okulomotoriusparese bei PCom-Aneurysma)", "**Meningismus** (Nackenbeugung, Kernig, Brudzinski, Lasègue)", "Hirnnerven, Kraft/Vorhalteversuch, MER, Babinski", "**Notfall-CT** nativ (+ CT-Angio); wenn negativ: **Lumbalpunktion** (Xanthochromie, Blut in allen Röhrchen)", "DSA: Aneurysma lokalisieren"],
+        therapie: ["Intensivstation, Bettruhe, RR-Kontrolle, Analgesie", "Aneurysmaversorgung: **Coiling** oder **Clipping**", "Nimodipin (Vasospasmus-Prophylaxe)", "Komplikationen: Nachblutung, Vasospasmus, Hydrozephalus, Hyponatriämie"],
+      },
+      extra: [{ t: "Hunt & Hess (Schwere)", c: ["I asymptomatisch/leichter Kopfschmerz · II starker Kopfschmerz, Meningismus, HN-Ausfälle · III Somnolenz, leichte Fokalneurologie · IV Sopor, Hemiparese · V Koma"] }],
+    },
+    {
+      id: "schwindel", titel: "Schwindel: peripher vs. zentral, BPLS", typ: "Fallstation", freq: 2,
+      af: ["2021: Schwindel: Okulomotorik/Nystagmus, lange Bahnen, Lagerungsmanöver zur DD; typische Zeichen eines Hirnstamminsults, Diagnose zentraler Schwindel?", "2021: Zentral vs. peripher (Eggers)", "2024: Starker Schwindel morgens: neurologischer Status, BPLS, **Dix-Hallpike vorzeigen**, Symptome Schlaganfall"],
+      gerust: {
+        anamnese: ["Art: Dreh-, Schwank-, Liftschwindel, Benommenheit", "Dauer: Sekunden (BPLS), Minuten–Stunden (Menière, TIA), Tage (Neuritis vestibularis, Hirnstamminsult)", "Auslöser: Kopflage/Umdrehen im Bett, spontan", "Begleitsymptome: Hörminderung, Tinnitus, Ohrdruck; Doppelbilder, Dysarthrie, Schluckstörung, Taubheit, Lähmung (zentral!); Kopfschmerz", "Vorerkrankungen, Medikamente (Antihypertensiva, Sedativa), Gefäßrisikofaktoren"],
+        dd: [["BPLS", "Sekunden, lageabhängig, Erbrechen", "**Dix-Hallpike** → Befreiungsmanöver (Epley/Sémont)"], ["Neuritis vestibularis", "Dauerdrehschwindel über Tage, Fallneigung zur kranken Seite, Spontannystagmus zur gesunden Seite, Kopfimpulstest pathologisch", "Kortison, Vestibulartraining"], ["Morbus Menière", "Attacken Stunden + Hörminderung + Tinnitus + Ohrdruck", "Audiometrie"], ["Hirnstamm-/Kleinhirninfarkt", "zentrale Okulomotorik, Fokalneurologie, Kopfimpulstest **normal**", "MRT, Stroke-Unit"], ["Vestibuläre Migräne, orthostatisch, kardial", "", "Anamnese, RR, EKG"]],
+        diagnostik: ["Spontan- und Blickrichtungsnystagmus (Frenzel-Brille)", "**HINTS**: Kopfimpulstest, Nystagmusrichtung, Skew-Deviation (Cover-Test)", "Dix-Hallpike: Kopf 45° zur Seite drehen, aus dem Sitzen rasch in Rückenlage mit leicht überhängendem Kopf → torsionaler, crescendo-decrescendo-Nystagmus nach kurzer Latenz = posteriorer Bogengang", "Romberg, Unterberger, Gang, Finger-Nase, lange Bahnen", "Hörprüfung (Weber/Rinne)"],
+      },
+      extra: [{ t: "Hirnstamminsult: Warnzeichen {anki}", c: ["Gekreuzte Symptomatik: ipsilaterale Hirnnervenausfälle + kontralaterale Hemiparese/Hemihypästhesie", "Vigilanzstörung, Doppelbilder, Dysarthrie, Dysphagie, Ataxie, vertikaler Nystagmus", "Wallenberg (PICA): Schwindel, Nystagmus, ipsilateral Horner, Gaumensegelparese, Heiserkeit, Gesichtssensibilität; kontralateral dissoziierte Empfindungsstörung"] }],
+    },
+    {
+      id: "parkinson", titel: "Morbus Parkinson vs. essentieller Tremor", typ: "Untersuchung", freq: 2,
+      af: ["2020: Morbus Parkinson: untersuchen, Unterschied zum essentiellen Tremor erklären, Leitsymptome nennen", "2024: Neurologie: Parkinson", "2025: Morbus Parkinson"],
+      ablauf: ["Inspektion: Hypomimie, Haltung (vornübergebeugt), Ruhetremor (Pillendrehen), Mikrographie (Schriftprobe)", "Rigor: passiv bewegen, **Zahnradphänomen**; Verstärkung durch Froment-Manöver (Gegenseite bewegen)", "Bradykinese: Fingertapping, Handöffnen-/schließen, Fußtapping (Amplitudenabnahme)", "Gang: kleinschrittig, vermindertes Armpendeln, Wendeschwierigkeit, Freezing", "Posturale Instabilität: **Pull-Test** (von hinten ziehen)"],
+      gerust: {
+        ddHead: ["", "Parkinson", "Essentieller Tremor"],
+        dd: [["Tremor-Art", "**Ruhetremor** 4–6 Hz, nimmt bei Bewegung ab", "**Halte- und Aktionstremor** 6–12 Hz"], ["Seite", "einseitig beginnend, asymmetrisch", "symmetrisch, oft auch Kopf/Stimme"], ["Weitere Symptome", "Rigor, Bradykinese, posturale Instabilität", "keine"], ["Alkohol", "keine Besserung", "Besserung"], ["Familie", "meist sporadisch", "oft positiv"], ["Therapie", "L-Dopa, Dopaminagonisten, MAO-B-Hemmer", "Propranolol, Primidon"]],
+        therapie: ["L-Dopa + Decarboxylasehemmer, Dopaminagonisten, MAO-B-/COMT-Hemmer; tiefe Hirnstimulation", "Physio-, Ergo-, Logopädie"],
+      },
+      extra: [{ t: "Kardinalsymptome {anki}", c: ["Bradykinese (obligat) + Rigor und/oder Ruhetremor; posturale Instabilität", "Frühe nicht-motorische Symptome: Hyposmie, REM-Schlaf-Verhaltensstörung, Obstipation, Depression"] }],
+    },
+    {
+      id: "pnp", titel: "Polyneuropathie", typ: "Fallstation", freq: 2,
+      af: ["2021: PNP: welche Befunde erwartet man, welche Untersuchungen (nur untere Extremität!), Auslöser; mehr Theorie als Praxis", "2024: Neuro: Polyneuropathie", "Allgemeinmedizin: Fußuntersuchung beim Diabetiker mit Monofilament und Stimmgabel"],
+      ablauf: ["Inspektion der Füße: Haut, trophische Störungen, Ulzera, Atrophie", "MER: ASR (früh abgeschwächt), PSR", "Sensibilität: Berührung, Monofilament, spitz/stumpf, Temperatur, **Vibration (Stimmgabel 128 Hz)** am Großzehengrundgelenk/Innenknöchel, Lagesinn", "Kraft: Zehen-/Fersengang (Steppergang?)", "Romberg (positiv bei sensibler Ataxie), Unterberger, Knie-Hacke"],
+      gerust: {
+        anamnese: ["Strumpfförmig aufsteigende Taubheit, Kribbeln, Brennen, nächtliche Schmerzen", "Gangunsicherheit im Dunkeln", "Autonom: Schwitzen, Blase, Erektion, Orthostase", "Diabetes, Alkohol, Niere, Chemotherapie, Medikamente, B12-Mangel, Infekte (Borrelien, HIV), Familie"],
+        dd: [["Diabetische PNP", "häufigste Ursache", "HbA1c"], ["Alkoholisch / nutritiv", "B1, B12, Folsäure", "Labor"], ["Urämisch, toxisch (Zytostatika)", "", "Niere, Anamnese"], ["Entzündlich: GBS/CIDP, Vaskulitis, Borreliose, HIV", "", "Liquor, Serologie"], ["Paraproteinämie, hereditär", "", "Immunfixation, Genetik"]],
+        diagnostik: ["Labor: BZ/HbA1c, B12, Folsäure, Niere, Leber, TSH, Elektrolyte, CRP, Immunelektrophorese, Serologie (Borrelien, Lues, HIV)", "Elektroneurographie (axonal vs. demyelinisierend), EMG", "ggf. Liquor, Nervenbiopsie"],
+        therapie: ["Ursache behandeln (BZ einstellen, Alkoholkarenz, Substitution)", "Neuropathischer Schmerz: Pregabalin/Gabapentin, Duloxetin, Amitriptylin", "Fußpflege, Schuhwerk, Sturzprophylaxe"],
+      },
+    },
+    {
+      id: "fazialis", titel: "Zentrale vs. periphere Fazialisparese & Trigeminus", typ: "Untersuchung", freq: 2,
+      af: ["2025: Periphere vs. zentrale Fazialisparese + Symptome jeweils (Mimik, was innerviert er noch: Geschmack, M. stapedius, Speicheldrüsen, Tränendrüse), N.-trigeminus-Untersuchung (Sensibilität, Austrittspunkte, Kornealreflex, Masseterreflex); Fazialisparese macht **Hyperakusis**", "2023: SAB-Patient spielt zentrale Fazialisparese vor", "2021 (Auge): Lagophthalmus mit Bell-Phänomen erkennen → Fazialisparese"],
+      ablauf: ["N. VII: Stirnrunzeln, Augen fest zukneifen, Nase rümpfen, Backen aufblasen, pfeifen, Zähne zeigen", "N. V sensibel: Berührung V1, V2, V3 seitenvergleichend; Austrittspunkte drücken; Kornealreflex", "N. V motorisch: Masseter beim Zubeißen tasten, Masseterreflex (Finger aufs Kinn, Mund leicht offen)"],
+      gerust: {
+        ddHead: ["", "Zentral", "Peripher"],
+        dd: [["Lokalisation", "Läsion oberhalb des Kerns (kontralateral): Insult, Tumor", "Kern oder Nerv (ipsilateral): idiopathisch (Bell), Zoster oticus, Borreliose, Otitis, Tumor"], ["Stirnrunzeln", "**erhalten** (Stirnast bilateral versorgt)", "**aufgehoben**"], ["Lidschluss", "meist möglich", "Lagophthalmus, Bell-Phänomen"], ["Begleitsymptome", "Hemiparese, Aphasie", "Hyperakusis (M. stapedius), Geschmack vordere 2/3 Zunge (Chorda tympani), Tränen- und Speichelsekretion ↓"]],
+        therapie: ["Idiopathisch: Prednisolon innerhalb 72 h, Uhrglasverband/Tränenersatz (Hornhautschutz)", "Zoster oticus: Aciclovir; Borreliose: Antibiose", "Zentral: Stroke-Abklärung"],
+      },
+    },
+  ],
+  details: [
+    { t: "Schlaganfall", def: "Plötzliches fokal-neurologisches Defizit; ischämisch (~85 %) oder hämorrhagisch. TIA: vorübergehend ohne Infarktnachweis.", aet: "Hypertonie (wichtigster RF), Diabetes, Hyperlipidämie, Vorhofflimmern, Rauchen, Alkohol, Hormone, Gerinnungsstörung.", klinik: "A. cerebri media: kontralaterale armbetonte Hemiparese, Aphasie (dominant), Neglect. A. cerebri anterior: beinbetont. A. cerebri posterior: homonyme Hemianopsie. Hirnstamm: gekreuzte Symptome, Schwindel, Doppelbilder.", diag: "FAST/BE-FAST, Zeitfenster („Time is brain“), BZ, CT/CT-Angio bzw. MRT.", ther: "Lyse (rtPA innerhalb 4,5 h), Thrombektomie bei großem Gefäßverschluss, Stroke-Unit; Sekundärprophylaxe." },
+    { t: "Meningismus-Zeichen {anki}", klinik: "Lasègue (gestrecktes Bein heben), Kernig (Knie strecken bei 90° Hüftbeugung), Brudzinski (passive Kopfbeugung → Beine ziehen sich an), Nackenbeugezeichen." },
+    { t: "Bewusstseinsstufen", klinik: "Benommen → somnolent (durch Ansprache weckbar) → soporös (nur durch Schmerzreize) → komatös. GCS: Augen 1–4, verbal 1–5, motorisch 1–6; ≤ 8 → Atemwegssicherung." },
+    { t: "Aphasien", klinik: "Broca (motorisch): stockend, Agrammatismus, Verständnis gut. Wernicke (sensorisch): flüssig, Paraphasien, Verständnis gestört. Global: beides. Amnestisch: Wortfindung. Dysarthrie = Sprechstörung (Artikulation), keine Sprachstörung." },
+  ],
+  anki: [
+    ["GBS-Liquor", "zytoalbuminäre Dissoziation: Eiweiß ↑, Zellzahl normal"],
+    ["Fazialisparese: Stirn ausgespart?", "ja → zentral · nein → peripher"],
+    ["Fazialis-Zusatzfunktionen", "M. stapedius (Hyperakusis), Geschmack vordere 2/3 (Chorda tympani), Tränen-, Speicheldrüsen"],
+    ["Romberg positiv bedeutet", "Fallneigung erst bei Augenschluss → sensible (spinale) Ataxie, z. B. PNP"],
+  ],
+});
