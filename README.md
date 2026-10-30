@@ -4,7 +4,7 @@ Lernwebsite für die OSCE 1 (Medizin, JKU Linz) mit 14 Fächern in drei Ebenen:
 **Big Picture → Stationen → Details**, dazu Lernplan nach Tagesform, Stations-Simulator mit echten Altfragen und Anki-Export.
 
 Inhaltliche Grundlage: „Evas Ausarbeitung“, Skript „OSCE – Praktische Aufgaben“, Altfragen 2020–2025.
-Keine Abbildungen aus den Skripten (Urheberrecht).
+Abbildungen aus dem Skript „Praktische Aufgaben“ liegen in `assets/img/` (Zuordnung in `data/_bilder.js`). Einige tragen fremdes Branding (AMBOSS, MediKnow u. a.): Rechte vor einer öffentlichen Veröffentlichung prüfen bzw. Repo privat halten.
 
 ## Lokal öffnen
 `index.html` im Browser öffnen. Es wird kein Server gebraucht.

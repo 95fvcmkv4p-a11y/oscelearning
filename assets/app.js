@@ -119,6 +119,7 @@
     if (g.diagnostik) b += `<div><h4>Weitere Diagnostik</h4><ul>${li(g.diagnostik)}</ul></div>`;
     if (g.therapie) b += `<div><h4>Therapie / Procedere</h4><ul>${li(g.therapie)}</ul></div>`;
     if (s.extra) s.extra.forEach((x) => { b += `<div><h4>${esc(x.t)}</h4>${x.rows ? tableHTML(x.head, x.rows) : `<ul>${li(x.c)}</ul>`}</div>`; });
+    b += galleryHTML(key);
     if (s.tipps) b += `<div><h4>Was Prüfer:innen hören wollten</h4><ul class="tips clean">${li(s.tipps)}</ul></div>`;
     b += `<div class="rate" data-key="${key}"><span>Wie sicher sitzt die Station?</span>
       <button type="button" data-v="1" aria-pressed="${v == 1}">Unsicher</button>
@@ -128,6 +129,12 @@
       <span class="st-title">${fmt(s.titel)}</span><span class="st-state" data-v="${v}" title="Selbsteinschätzung"></span>
       <span class="st-sub"><span class="st-type">${esc(s.typ || "Station")}</span>${freqHTML(s.freq || 1)}</span>
     </summary><div class="st-body">${b}</div></details>`;
+  }
+
+  function galleryHTML(key) {
+    const imgs = (O.bilder || {})[key];
+    if (!imgs || !imgs.length) return "";
+    return `<div><h4>Abbildungen</h4><div class="gallery">${imgs.map((im) => `<figure><button type="button" class="zoom" data-src="${im.src}" data-cap="${esc(im.cap)}" aria-label="Abbildung vergrößern: ${esc(im.cap)}"><img src="${im.src}" alt="${esc(im.cap)}" loading="lazy"></button><figcaption>${esc(im.cap)}</figcaption></figure>`).join("")}</div></div>`;
   }
 
   function diseaseHTML(d) {
@@ -171,7 +178,7 @@
       </section>`;
     if (f.details && f.details.length) h += `<section class="lvl" id="lv3"><h2><span class="num">3</span>Details</h2>
         <p class="intro">Krankheitsbilder auf Kitteltaschen-Tiefe: so viel, wie man für DD, nächste Diagnostik und Therapieprinzip braucht. Erst angehen, wenn Ebene 1 und 2 stehen.</p>
-        <div class="disease-grid">${f.details.map(diseaseHTML).join("")}</div></section>`;
+        ${galleryHTML(f.id + ":_details")}<div class="disease-grid">${f.details.map(diseaseHTML).join("")}</div></section>`;
     if (f.quelle) h += `<p class="muted small" style="margin-top:30px">Quellen: ${esc(f.quelle)}</p>`;
     return h + `</div>`;
   }
@@ -349,6 +356,7 @@
     const rb = t.closest(".rate button"); if (rb) { const key = rb.parentElement.dataset.key, v = +rb.dataset.v; S.rating[key] = S.rating[key] === v ? 0 : v; save();
       $$("button", rb.parentElement).forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.v === S.rating[key])));
       const st = rb.closest("details").querySelector(".st-state"); st.dataset.v = S.rating[key]; renderNav(); route_keepActive(); return; }
+    const z = t.closest(".zoom"); if (z) { const lb = document.createElement("div"); lb.className = "lightbox"; lb.innerHTML = `<figure><img src="${z.dataset.src}" alt=""><figcaption>${esc(z.dataset.cap)} · tippen zum Schließen</figcaption></figure>`; lb.onclick = () => lb.remove(); document.body.appendChild(lb); return; }
     const cb = t.closest(".cover-btn"); if (cb) { cb.parentElement.classList.remove("covered"); return; }
     if (t.id === "coverToggle") { S.cover = !S.cover; save(); t.setAttribute("aria-pressed", S.cover); $$(".befund").forEach((b) => b.classList.toggle("covered", S.cover)); return; }
     if (t.id === "openAll") { const all = $$("details.station"); const anyClosed = all.some((d) => !d.open); all.forEach((d) => (d.open = anyClosed)); t.textContent = anyClosed ? "Alle zuklappen" : "Alle aufklappen"; return; }
